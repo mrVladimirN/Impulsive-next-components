@@ -47,5 +47,5 @@
       }
     }
   ],
-  "ignorePatterns": ["__tests__", "node_modules/", "tailwind.config.ts"]
+  "ignorePatterns": ["__tests__", "node_modules/", "tailwind.config.ts", "src/firebase/functions/lib/"]
 }

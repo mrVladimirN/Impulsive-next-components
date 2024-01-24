@@ -7,3 +7,5 @@ README.md
 .git
 .env
 .env.example
+
+firebase/serviceAccount.json
