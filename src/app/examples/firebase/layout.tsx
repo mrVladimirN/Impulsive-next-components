@@ -1,18 +1,31 @@
-import FirebaseNavBar from '@/components-for-examples/navbar';
-import AuthProvider from '@/providers/examples/firebase/auth-provider';
+import FirebaseHeader from '@/components/ui/firebase-header';
+import ClientProviders from '@/providers/client-provider';
+import FirebaseAuthProvider from '@/providers/firebase-auth-provider';
+import ThemeProvider from '@/providers/theme-provider';
+import SubscriptionProvider from '@/providers/subscription-provider';
 import { ReactNode } from 'react';
 
-interface IntroLayoutProps {
+type FirebaseLayoutProps = {
   children: ReactNode;
-}
+};
 
-export default async function IntroLayout({ children }: IntroLayoutProps) {
-  return (
-    <AuthProvider>
-    <main className="flex flex-col items-center h-screen w-screen bg-slate-800 pt-40">
-      <FirebaseNavBar />
-      {children}
-    </main>
-    </AuthProvider>
-  );
-}
+const FirebaseLayout = ({ children }: FirebaseLayoutProps) => (
+  <ClientProviders>
+    <div className="flex flex-col min-h-screen">
+      <FirebaseAuthProvider>
+        <SubscriptionProvider>
+          <ThemeProvider
+            attribute="class"
+            defaultTheme="system"
+            enableSystem
+            disableTransitionOnChange
+          >
+            <FirebaseHeader />
+            {children}
+          </ThemeProvider>
+        </SubscriptionProvider>
+      </FirebaseAuthProvider>
+    </div>
+  </ClientProviders>
+);
+export default FirebaseLayout;

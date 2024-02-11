@@ -14,12 +14,11 @@ export const metadata: Metadata = {
   keywords: ['Next.js', 'React', 'Tailwind CSS', 'Server Components']
 };
 
-interface RootLayoutProps {
+type RootLayoutProps = {
   children: ReactNode;
 }
 
-export default function RootLayout({ children }: RootLayoutProps) {
-  return (
+const RootLayout = ({ children }: RootLayoutProps) => (
     <>
       <html lang="en" suppressHydrationWarning>
         <head />
@@ -33,5 +32,5 @@ export default function RootLayout({ children }: RootLayoutProps) {
         </body>
       </html>
     </>
-  );
-}
+);
+export default RootLayout;
