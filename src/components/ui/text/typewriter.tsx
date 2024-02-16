@@ -6,6 +6,7 @@ import Cursor, { CursorProps } from './cursor';
 
 type ComponentProps = {
   cursor?: boolean;
+  className?: string;
 } & TypewriterProps &
   CursorProps;
 
@@ -19,6 +20,7 @@ const Typewriter = ({
   cursorStyle = '|',
   cursorColor = 'inherit',
   cursorBlinking = true,
+  className,
   onLoopDone,
   onType,
   onDelay,
@@ -41,6 +43,7 @@ const Typewriter = ({
       <span>{text}</span>
       {cursor && (
         <Cursor
+          className={className}
           cursorStyle={cursorStyle}
           cursorColor={cursorColor}
           cursorBlinking={cursorBlinking}
