@@ -10,16 +10,16 @@ if (!admin.apps.length) {
   app = admin.initializeApp({
     credential: admin.credential.cert({
       projectId: process.env.FIREBASE_PROJECT_ID || 'test',
-      clientEmail: process.env.FIREBASE_CLIENT_EMAIL,
-      privateKey: process.env.FIREBASE_PRIVATE_KEY!.replace(/\\n/g, '\n')
+      clientEmail: process.env.FIREBASE_CLIENT_EMAIL || 'test',
+      privateKey: process.env.FIREBASE_PRIVATE_KEY!.replace(/\\n/g, '\n') || 'test'
     })
   });
 }
 const adminDb: Firestore = initFirestore({
   credential: admin.credential.cert({
-    projectId: process.env.FIREBASE_PROJECT_ID,
-    clientEmail: process.env.FIREBASE_CLIENT_EMAIL,
-    privateKey: process.env.FIREBASE_PRIVATE_KEY!.replace(/\\n/g, '\n')
+    projectId: process.env.FIREBASE_PROJECT_ID || 'test',
+    clientEmail: process.env.FIREBASE_CLIENT_EMAIL || 'test',
+    privateKey: process.env.FIREBASE_PRIVATE_KEY!.replace(/\\n/g, '\n') || 'test'
   })
 });
 const adminAuth: Auth = admin.auth(app);
