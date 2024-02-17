@@ -9,9 +9,9 @@ jobs:
   build:
     runs-on: ubuntu-latest
     env: # Define environment variables for the entire job
-      FIREBASE_PROJECT_ID: ${{ secrets.Private_Firebase.PROJECT_ID }}
-      FIREBASE_PRIVATE_KEY: ${{ secrets.Private_Firebase.PRIVATE_KEY }}
-      FIREBASE_CLIENT_EMAIL: ${{ secrets.Private_Firebase.CLIENT_EMAIL }}
+      FIREBASE_PROJECT_ID: ${{ secrets.Private_Firebase_PROJECT_ID }}
+      FIREBASE_PRIVATE_KEY: ${{ secrets.Private_Firebase_PRIVATE_KEY }}
+      FIREBASE_CLIENT_EMAIL: ${{ secrets.Private_Firebase_CLIENT_EMAIL }}
     steps:
       - name: Checkout Repository
         uses: actions/checkout@v3
