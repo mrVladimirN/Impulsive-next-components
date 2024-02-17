@@ -28,7 +28,7 @@ const generatePortalLink = async () => {
     ? `http://${host}/register`
     : `https://${host}/register`;
 
-  const doc = await adminDb.collection('customers').doc(id).get();
+  const doc = await adminDb!.collection('customers').doc(id).get();
 
   if (!doc.data) return console.error('No customer record found with userId: ', id);
 
