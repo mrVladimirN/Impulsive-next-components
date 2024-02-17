@@ -11,10 +11,10 @@ if (!admin.apps.length) {
     credential: admin.credential.cert({
       projectId: process.env.FIREBASE_PROJECT_ID
         ? process.env.FIREBASE_PROJECT_ID
-        : undefined,
+        : '',
       clientEmail: process.env.FIREBASE_CLIENT_EMAIL
         ? process.env.FIREBASE_CLIENT_EMAIL
-        : undefined,
+        : '',
       privateKey: process.env.FIREBASE_PRIVATE_KEY
         ? process.env.FIREBASE_PRIVATE_KEY.replace(/\\n/g, '\n')
         : undefined
@@ -25,10 +25,10 @@ const adminDb: Firestore = initFirestore({
   credential: admin.credential.cert({
     projectId: process.env.FIREBASE_PROJECT_ID
       ? process.env.FIREBASE_PROJECT_ID
-      : undefined,
+      : '',
     clientEmail: process.env.FIREBASE_CLIENT_EMAIL
       ? process.env.FIREBASE_CLIENT_EMAIL
-      : undefined,
+      : '',
     privateKey: process.env.FIREBASE_PRIVATE_KEY
       ? process.env.FIREBASE_PRIVATE_KEY.replace(/\\n/g, '\n')
       : undefined
